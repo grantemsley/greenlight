@@ -47,14 +47,14 @@
               <span class="input-icon-addon">
                 <i class="fas fa-phone"></i>
               </span>
-              <%= f.text_field :dial_number, id: "create-dial-number", class: "form-control text-center", value: "", placeholder: t("modal.room_settings.dial_number_placeholder"), autocomplete: :off %>
+              <%= f.text_field :dial_number, id: "room_dial_number", class: "form-control text-center", value: "", placeholder: t("modal.room_settings.dial_number_placeholder"), autocomplete: :off %>
             </div>
 
             <div class="input-icon mb-2">
               <span class="input-icon-addon">
                 <i class="fas fa-hashtag"></i>
               </span>
-              <%= f.text_field :voice_bridge, id: "create-voice-bridge", class: "form-control text-center", value: "", placeholder: t("modal.room_settings.voice_bridge_placeholder"), autocomplete: :off %>
+              <%= f.text_field :voice_bridge, id: "room_voice_bridge", class: "form-control text-center", value: "", placeholder: t("modal.room_settings.voice_bridge_placeholder"), autocomplete: :off %>
             </div>
 
             <% if Rails.configuration.room_features.include? "mute-on-join" %>
