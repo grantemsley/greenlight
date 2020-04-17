@@ -182,8 +182,6 @@ function showUpdateRoom(target) {
   updateCurrentSettings(settings_path)
   
   var accessCode = modal.closest("#room-block").data("room-access-code")
-  var dialNum = model.closest("#room-block").data("room_dial_number")
-  var voiceBridge = modal.closest("room-block").data("room_voice_bridge")
 
   if(accessCode){
     $("#create-room-access-code").text(getLocalizedString("modal.create_room.access_code") + ": " + accessCode)
@@ -191,18 +189,6 @@ function showUpdateRoom(target) {
   } else {
     $("#create-room-access-code").text(getLocalizedString("modal.create_room.access_code_placeholder"))
     $("#room_access_code").val(null)
-  }
-
-  if(dialNum){
-      $("#room_dial_number").val(dialNum)
-  } else {
-      $("#room_dial_number").val(null)
-  }
-
-  if(voiceBridge){
-      $("#room_voice_bridge").val(voiceBridge)
-  } else {
-      $("#room_voice_bridge").val(null)
   }
 }
 
