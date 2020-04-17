@@ -143,7 +143,9 @@ function showCreateRoom(target) {
   $("#room_mute_on_join").prop("checked", false)
   $("#room_require_moderator_approval").prop("checked", false)
   $("#room_anyone_can_start").prop("checked", false)
-  $("#room_all_join_moderator").prop("checked", false)
+  $("#room_all_join_moderator").prop("checked", false);
+  $("#room_dial_number").val(null);
+  $("#room_voice_bridge").val(null);
 
   //show all elements & their children with a create-only class
   $(".create-only").each(function() {
@@ -204,6 +206,8 @@ function updateCurrentSettings(settings_path){
     $("#room_require_moderator_approval").prop("checked", settings.requireModeratorApproval)
     $("#room_anyone_can_start").prop("checked", settings.anyoneCanStart)
     $("#room_all_join_moderator").prop("checked", settings.joinModerator)
+    $("#room_dial_number").val(settings.dialNumber)
+    $("#room_voice_bridge").val(settings.voiceBridge)
   })
 }
 
