@@ -194,18 +194,14 @@ function showUpdateRoom(target) {
   }
 
   if(dialNum){
-      $("#room_dial_number").text(dialNum)
       $("#room_dial_number").val(dialNum)
   } else {
-      $("#room_dial_number").text(getLocalizedString("modal.room_settings.dial_number_placeholder"))
       $("#room_dial_number").val(null)
   }
 
   if(voiceBridge){
-      $("#room_voice_bridge").text(voiceBridge)
       $("#room_voice_bridge").val(voiceBridge)
   } else {
-      $("#room_voice_bridge").text(getLocalizedString("modal.room_settings.voice_bridge_placeholder"))
       $("#room_voice_bridge").val(null)
   }
 }
