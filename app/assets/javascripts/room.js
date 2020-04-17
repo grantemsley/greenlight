@@ -143,9 +143,9 @@ function showCreateRoom(target) {
   $("#room_mute_on_join").prop("checked", false)
   $("#room_require_moderator_approval").prop("checked", false)
   $("#room_anyone_can_start").prop("checked", false)
-  $("#room_all_join_moderator").prop("checked", false);
-  $("#room_dial_number").val(null);
-  $("#room_voice_bridge").val(null);
+  $("#room_all_join_moderator").prop("checked", false)
+  $("#room_dial_number").val(null)
+  $("#room_voice_bridge").val(null)
 
   //show all elements & their children with a create-only class
   $(".create-only").each(function() {
