@@ -184,7 +184,6 @@ class RoomsController < ApplicationController
     begin
       options = params[:room].nil? ? params : params[:room]
       raise "Room name can't be blank" if options[:name].blank?
-      raise options[:dial_number] if options[:dial_number]
 
       # Update the rooms values
       room_settings_string = create_room_settings_string(options)
@@ -286,8 +285,8 @@ class RoomsController < ApplicationController
       "requireModeratorApproval": options[:require_moderator_approval] == "1",
       "anyoneCanStart": options[:anyone_can_start] == "1",
       "joinModerator": options[:all_join_moderator] == "1",
-      "dialNumber": options[:dial_number] == "",
-      "voiceBridge": options[:voice_bridge] == ""
+      "dialNumber": options[:dial_number],
+      "voiceBridge": options[:voice_bridge]
     }
 
     room_settings.to_json
