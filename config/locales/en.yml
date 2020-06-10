@@ -406,8 +406,9 @@ en:
       mute: Mute users when they join
       require_approval: Require moderator approval before joining
       start: Allow any user to start this meeting
-      dial_number_placeholder: Enter your dial number
-      voice_bridge_placeholder: Enter your conference pin number
+      dial_number_placeholder: Choose your dial number
+      voice_bridge_placeholder: Generate optional static dialin PIN 
+      voice_bridge: Conference dialin PIN
       footer_text: Adjustment to your room can be done at anytime.
     rename_room:
       name_placeholder: Enter a new room name...

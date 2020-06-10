@@ -188,6 +188,17 @@ function showUpdateRoom(target) {
     $("#create-room-access-code").text(getLocalizedString("modal.create_room.access_code_placeholder"))
     $("#room_access_code").val(null)
   }
+
+  var PINCode = modal.closest(".room-block").data("room-voice-bridge")
+  console.log("TEST");
+  console.log(PINCode);
+  if(PINCode){
+    $("#create-room-voice-bridge").text(getLocalizedString("modal.room_settings.voice_bridge") + ": " + PINCode)
+    $("#room_voice_bridge").val(PINCode)
+  } else {
+    $("#create-room-voice-bridge").text(getLocalizedString("modal.room_settings.voice_bridge_placeholder"))
+    $("#room_voice_bridge").val(null)
+  }
 }
 
 function showDeleteRoom(target) {
@@ -226,6 +237,24 @@ function generateAccessCode(){
 function ResetAccessCode(){
   $("#create-room-access-code").text(getLocalizedString("modal.create_room.access_code_placeholder"))
   $("#room_access_code").val(null)
+}
+
+function generatePIN(){
+  const PINCodeLength = 5
+  var validCharacters = "0123456789"
+  var PINCode = ""
+
+  for( var i = 0; i < PINCodeLength; i++){
+    PINCode += validCharacters.charAt(Math.floor(Math.random() * validCharacters.length));
+  }
+
+  $("#create-room-voice-bridge").text(getLocalizedString("modal.room_settings.voice_bridge") + ": " + PINCode)
+  $("#room_voice_bridge").val(PINCode)
+}
+
+function ResetPIN(){
+  $("#create-room-voice-bridge").text(getLocalizedString("modal.room_settings.voice_bridge_placeholder"))
+  $("#room_voice_bridge").val(null)
 }
 
 function saveAccessChanges() {

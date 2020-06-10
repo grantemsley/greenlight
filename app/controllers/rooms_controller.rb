@@ -171,6 +171,8 @@ class RoomsController < ApplicationController
     @room_settings = JSON.parse(@room[:room_settings])
     opts[:mute_on_start] = room_setting_with_config("muteOnStart")
     opts[:require_moderator_approval] = room_setting_with_config("requireModeratorApproval")
+    logger.info "TEST"
+    logger.info "PIN #{@room_settings["voiceBridge"]}"
     opts[:dial_number] = @room_settings["dialNumber"]
     opts[:voice_bridge] = @room_settings["voiceBridge"]
 
