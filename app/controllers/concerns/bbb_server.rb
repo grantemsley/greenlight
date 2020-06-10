@@ -67,6 +67,8 @@ module BbbServer
       attendeePW: room.attendee_pw,
       moderatorOnlyMessage: options[:moderator_message],
       muteOnStart: options[:mute_on_start] || false,
+      dialNumber: options[:dial_number] || '',
+      voiceBridge: options[:voice_bridge] || '',
       "meta_#{META_LISTED}": options[:recording_default_visibility] || false,
       "meta_bbb-origin-version": Greenlight::Application::VERSION,
       "meta_bbb-origin": "Greenlight",

@@ -171,6 +171,8 @@ class RoomsController < ApplicationController
     @room_settings = JSON.parse(@room[:room_settings])
     opts[:mute_on_start] = room_setting_with_config("muteOnStart")
     opts[:require_moderator_approval] = room_setting_with_config("requireModeratorApproval")
+    opts[:dial_number] = room_settings["dialNumber"]
+    opts[:voice_bridge] = room_settings["voiceBridge"]
 
     begin
       redirect_to join_path(@room, current_user.name, opts, current_user.uid)
@@ -291,6 +293,8 @@ class RoomsController < ApplicationController
       "requireModeratorApproval": options[:require_moderator_approval] == "1",
       "anyoneCanStart": options[:anyone_can_start] == "1",
       "joinModerator": options[:all_join_moderator] == "1",
+      "dialNumber": options[:dial_number],
+      "voiceBridge": options[:voice_bridge]
     }
 
     room_settings.to_json
@@ -298,7 +302,7 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :auto_join, :mute_on_join, :access_code,
-      :require_moderator_approval, :anyone_can_start, :all_join_moderator)
+      :require_moderator_approval, :anyone_can_start, :all_join_moderator, :dial_number, :voice_bridge)
   end
 
   # Find the room from the uid.

@@ -43,6 +43,20 @@
               </span>
             </div>
 
+            <div class="input-icon mb-2">
+              <span class="input-icon-addon">
+                <i class="fas fa-phone"></i>
+              </span>
+              <%= f.text_field :dial_number, id: "room_dial_number", class: "form-control text-center", value: "", placeholder: t("modal.room_settings.dial_number_placeholder"), autocomplete: :off %>
+            </div>
+
+            <div class="input-icon mb-2">
+              <span class="input-icon-addon">
+                <i class="fas fa-hashtag"></i>
+              </span>
+              <%= f.text_field :voice_bridge, id: "room_voice_bridge", class: "form-control text-center", value: "", placeholder: t("modal.room_settings.voice_bridge_placeholder"), autocomplete: :off %>
+            </div>
+
             <% mute = room_configuration("Room Configuration Mute On Join") %>
             <% if mute != "disabled" %>
               <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block <%= "enabled-setting" if mute == "enabled" %>">
