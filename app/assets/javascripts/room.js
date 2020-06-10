@@ -189,9 +189,7 @@ function showUpdateRoom(target) {
     $("#room_access_code").val(null)
   }
 
-  var PINCode = modal.closest(".room-block").data("room-voice-bridge")
-  console.log("TEST");
-  console.log(PINCode);
+  var PINCode = modal.closest(".room-block").data("room-settings").voiceBridge
   if(PINCode){
     $("#create-room-voice-bridge").text(getLocalizedString("modal.room_settings.voice_bridge") + ": " + PINCode)
     $("#room_voice_bridge").val(PINCode)
@@ -199,6 +197,16 @@ function showUpdateRoom(target) {
     $("#create-room-voice-bridge").text(getLocalizedString("modal.room_settings.voice_bridge_placeholder"))
     $("#room_voice_bridge").val(null)
   }
+
+  var dialNumber = modal.closest(".room-block").data("room-settings").dialNumber
+  console.log(dialNumber);
+  console.log("TEST");
+  
+  if(dialNumber){
+    $("#room_dial_number option[value=dialNumber]").attr('selected','selected');
+    $('.selectpicker').selectpicker('refresh');
+  }
+
 }
 
 function showDeleteRoom(target) {
